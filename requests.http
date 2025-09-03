@@ -1,0 +1,15 @@
+@baseUrl = http://localhost:3535/courses
+POST {{baseUrl}}
+Content-Type: application/json
+
+{
+  "title": "Curso primeira API"
+}
+
+###
+
+GET {{baseUrl}}
+
+###
+
+GET {{baseUrl}}/53a5c9c3-b4d2-4262-9a9e-ac6cf5f8369e
