@@ -3,7 +3,7 @@ POST {{baseUrl}}
 Content-Type: application/json
 
 {
-  "title": "Curso primeira API"
+  "title": "Curso segunda API"
 }
 
 ###
@@ -12,4 +12,4 @@ GET {{baseUrl}}
 
 ###
 
-GET {{baseUrl}}/53a5c9c3-b4d2-4262-9a9e-ac6cf5f8369e
+GET {{baseUrl}}/5c0a4546-2df8-4c3d-8fea-9766f1694540

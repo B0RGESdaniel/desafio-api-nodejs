@@ -1,5 +1,15 @@
 import fastify from "fastify";
-import crypto from "node:crypto";
+import {
+  validatorCompiler,
+  serializerCompiler,
+  type ZodTypeProvider,
+  jsonSchemaTransform,
+} from "fastify-type-provider-zod";
+import { fastifySwagger } from "@fastify/swagger";
+import { createCourseRoute } from "./src/routes/create-course.ts";
+import { getCoursesRoute } from "./src/routes/get-courses.ts";
+import { getCourseByIdRoute } from "./src/routes/get-course-by-id.ts";
+import scalarApiReference from "@scalar/fastify-api-reference";
 
 const server = fastify({
   logger: {
@@ -11,51 +21,30 @@ const server = fastify({
       },
     },
   },
-});
+}).withTypeProvider<ZodTypeProvider>();
 
-const courses = [
-  { id: "1", title: "Curso 1" },
-  { id: "2", title: "Curso 2" },
-  { id: "3", title: "Curso 3" },
-];
+if (process.env.NODE_ENV === "development") {
+  server.register(fastifySwagger, {
+    openapi: {
+      info: {
+        title: "Desafio Node.js",
+        version: "1.0.0",
+      },
+    },
+    transform: jsonSchemaTransform,
+  });
 
-server.get("/courses", () => {
-  return { courses };
-});
+  server.register(scalarApiReference, {
+    routePrefix: "/docs",
+  });
+}
 
-server.get("/courses/:id", (request, reply) => {
-  type Params = {
-    id: string;
-  };
+server.setValidatorCompiler(validatorCompiler); // valida entrada
+server.setSerializerCompiler(serializerCompiler); // valida saida
 
-  const params = request.params as Params;
-  const courseId = params.id;
-
-  const course = courses.find((course) => course.id === courseId);
-  if (course) {
-    return { course };
-  }
-
-  return reply.status(404).send("Course not found");
-});
-
-server.post("/courses", (request, reply) => {
-  type Body = {
-    title: string;
-  };
-
-  const body = request.body as Body;
-
-  const courseId = crypto.randomUUID();
-  const courseTitle = body.title;
-  if (!courseTitle) {
-    return reply.status(400).send({ message: "Title is required" });
-  }
-
-  courses.push({ id: courseId, title: courseTitle });
-
-  return reply.status(201).send({ courseId });
-});
+server.register(createCourseRoute);
+server.register(getCoursesRoute);
+server.register(getCourseByIdRoute);
 
 server.listen({ port: 3535 }).then(() => {
   console.log("HTTP server running");
