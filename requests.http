@@ -12,6 +12,10 @@ GET {{baseUrl}}/courses
 
 ###
 
+GET {{baseUrl}}/users
+
+###
+
 GET {{baseUrl}}/courses?orderBy=title
 
 ###

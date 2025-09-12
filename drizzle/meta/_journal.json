@@ -29,6 +29,20 @@
       "when": 1757640631674,
       "tag": "0003_giant_vindicator",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1757685865591,
+      "tag": "0004_naive_spectrum",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1757686644588,
+      "tag": "0005_previous_lila_cheney",
+      "breakpoints": true
     }
   ]
 }
