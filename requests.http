@@ -1,4 +1,4 @@
-@baseUrl = http://localhost:3535/courses
+@baseUrl = http://localhost:3535
 POST {{baseUrl}}
 Content-Type: application/json
 
@@ -8,8 +8,12 @@ Content-Type: application/json
 
 ###
 
-GET {{baseUrl}}
+GET {{baseUrl}}/courses
 
 ###
 
-GET {{baseUrl}}/5c0a4546-2df8-4c3d-8fea-9766f1694540
+GET {{baseUrl}}/courses?orderBy=title
+
+###
+
+GET {{baseUrl}}/courses/5c0a4546-2df8-4c3d-8fea-9766f1694540

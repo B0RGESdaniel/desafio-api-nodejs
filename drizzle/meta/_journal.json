@@ -15,6 +15,20 @@
       "when": 1757529511860,
       "tag": "0001_tidy_starjammers",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1757640490098,
+      "tag": "0002_luxuriant_the_fury",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1757640631674,
+      "tag": "0003_giant_vindicator",
+      "breakpoints": true
     }
   ]
 }
