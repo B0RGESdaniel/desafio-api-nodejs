@@ -4,7 +4,7 @@
 #
 
 app = 'desafio-api-nodejs-c34o5q'
-primary_region = 'gig'
+primary_region = 'gru'
 
 [build]
 
