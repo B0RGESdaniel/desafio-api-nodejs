@@ -7,8 +7,8 @@ WORKDIR /app
 # copia todos os arquivos menos os citados no .dockerignore
 COPY . ./
 
-# é o npm install mas sem alterar o package.lock e sem as devDependencies
-RUN npm ci --only=production
+# é o npm install mas sem alterar o package.lock
+RUN npm ci
 
 EXPOSE 3535
 
