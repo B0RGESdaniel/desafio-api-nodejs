@@ -1,9 +1,10 @@
 @baseUrl = http://localhost:3535
-POST {{baseUrl}}
+POST {{baseUrl}}/courses
 Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlYTg5MzVkNS1kODFiLTRkZmUtYjU1Ni0wNWVhODZiMjI0ZTMiLCJyb2xlIjoibWFuYWdlciIsImlhdCI6MTc1ODA0NTU4Nn0.dq_w3I-7BTWSjz_ILje-25mQlXpUHBHAvH1gtqFuCK4
 
 {
-  "title": "Curso segunda API"
+  "title": "Curso terceira API"
 }
 
 ###
@@ -20,4 +21,15 @@ GET {{baseUrl}}/courses?orderBy=title
 
 ###
 
-GET {{baseUrl}}/courses/5c0a4546-2df8-4c3d-8fea-9766f1694540
+GET {{baseUrl}}/courses/8c4e93e7-bad3-47f5-ada8-9ebd27945012
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlYTg5MzVkNS1kODFiLTRkZmUtYjU1Ni0wNWVhODZiMjI0ZTMiLCJyb2xlIjoic3R1ZGVudCIsImlhdCI6MTc1ODAzNjM4N30.y5PAlXKqFFQuA7nGG6zQjSmmCoEZuT9bVlm8wBqLlAk
+
+###
+
+POST {{baseUrl}}/sessions
+Content-Type: application/json
+
+{
+  "email": "JoaoPedro40@yahoo.com",
+  "password": "123456"
+}

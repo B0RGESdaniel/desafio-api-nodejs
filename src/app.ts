@@ -9,6 +9,7 @@ import { fastifySwagger } from "@fastify/swagger";
 import { createCourseRoute } from "./routes/create-course.ts";
 import { getCoursesRoute } from "./routes/get-courses.ts";
 import { getCourseByIdRoute } from "./routes/get-course-by-id.ts";
+import { loginRoute } from "./routes/login.ts";
 import scalarApiReference from "@scalar/fastify-api-reference";
 
 const server = fastify({
@@ -45,5 +46,6 @@ server.setSerializerCompiler(serializerCompiler); // valida saida
 server.register(createCourseRoute);
 server.register(getCoursesRoute);
 server.register(getCourseByIdRoute);
+server.register(loginRoute);
 
 export { server };

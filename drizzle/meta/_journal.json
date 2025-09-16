@@ -43,6 +43,20 @@
       "when": 1757686644588,
       "tag": "0005_previous_lila_cheney",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1758028759541,
+      "tag": "0006_clear_sleeper",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1758029282029,
+      "tag": "0007_dear_nico_minoru",
+      "breakpoints": true
     }
   ]
 }
