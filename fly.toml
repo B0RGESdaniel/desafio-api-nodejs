@@ -23,4 +23,4 @@ primary_region = 'gig'
   memory_mb = 256
 
 [deploy]
-  release_command = "npx drizzle-kit migrate"
+  release_command = "npm run db:migrate"
